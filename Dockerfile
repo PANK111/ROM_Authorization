@@ -1,4 +1,4 @@
 FROM public.ecr.aws/amazoncorretto/amazoncorretto:17
-EXPOSE 4200
-ADD target/ReturnOrderManagementSystem-0.0.1-SNAPSHOT.jar ReturnOrderManagementSystem-0.0.1-SNAPSHOT 
-ENTRYPOINT ["java","-jar","/ReturnOrderManagementSystem-0.0.1-SNAPSHOT"]
+EXPOSE 9094
+ADD target/Return-Order-Management-System-0.0.1-SNAPSHOT.jar Return-Order-Management-System-0.0.1-SNAPSHOT 
+ENTRYPOINT ["java","-jar","/Return-Order-Management-System-0.0.1-SNAPSHOT"]

@@ -19,17 +19,17 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latestApiGetway .
-      - docker tag $REPOSITORY_URI:latestApiGetway $REPOSITORY_URI:$IMAGE_TAG
+      - docker build -t $REPOSITORY_URI:latestAuthorization .
+      - docker tag $REPOSITORY_URI:latestAuthorization $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:latestApiGetway
+      - docker push $REPOSITORY_URI:latestAuthorization
       - echo Writing image definitions file...
-      - printf '[{"name":"ReturnOrderManagementSystem-0.0.1-SNAPSHOT.jar","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"Return-Order-Management-System-0.0.1-SNAPSHOT.jar","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
 artifacts:
   files:
    - imagedefinitions.json
-   - target/ReturnOrderManagementSystem-0.0.1-SNAPSHOT.jar
+   - target/Return-Order-Management-System-0.0.1-SNAPSHOT.jar
